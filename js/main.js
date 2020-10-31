@@ -3,19 +3,9 @@
 
       var regalo = document.getElementById('regalo');
 
+
+
       document.addEventListener('DOMContentLoaded', function(){
-
-      var map = L.map('mapa').setView([-34.700104, -58.573083], 16);
-
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-
-        L.marker([-34.700104, -58.573083]).addTo(map)
-            .bindPopup('GdlWebCamp 2020.<br> Boletos ya disponibles.')
-            .openPopup()
-            .bindTooltip('Un Tooltip')
-            .openTooltip();
 
       // Campos de usuario
       var nombre = document.getElementById('nombre');
@@ -117,6 +107,7 @@
 
      }// calcularMontos
 
+
       function mostrarDias(){
         var boletosDia = parseInt(pase_dia.value, 10) || 0 ,
             boletos2Dias = parseInt(pase_dosdias.value, 10) || 0,
@@ -139,6 +130,21 @@
       }
 
 
+
+
   }); // DOM CONTENT LOADED
+  
+  var map = L.map('mapa').setView([-34.700104, -58.573083], 16);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    L.marker([-34.700104, -58.573083]).addTo(map)
+        .bindPopup('GdlWebCamp 2020.<br> Boletos ya disponibles.')
+        .openPopup()
+        .bindTooltip('Un Tooltip')
+        .openTooltip();
+
 
 })();
